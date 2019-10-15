@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from .models import ApiItem
+from .models import Location
 
 
-class ApiItemSerializer(serializers.ModelSerializer):
+class LocationSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = ApiItem
+        model = Location
         fields = '__all__'
