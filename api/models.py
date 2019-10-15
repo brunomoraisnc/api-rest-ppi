@@ -24,5 +24,5 @@ class Location(models.Model):
     speed = models.FloatField(null=True)
     altitude = models.FloatField(null=True)
     bearing = models.IntegerField(null=True)
-    isFromMockProvider = models.CharField(null=True, max_lenght=20)
-    mockLocationsEnabled = models.CharField(null=True, max_lenght=20)
+    isFromMockProvider = models.CharField(null=True, max_length=20)
+    mockLocationsEnabled = models.CharField(null=True, max_length=20)
