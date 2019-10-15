@@ -1,0 +1,1 @@
+This file was created to start version control of static directory, used by Django.
