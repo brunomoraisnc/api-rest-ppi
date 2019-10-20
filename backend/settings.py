@@ -25,7 +25,7 @@ SECRET_KEY = 'byj9_481qdr(r*lmv9tcyim!7ow))ooj^%l&+*=qemm-2d2rg!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rest-api-ifb-ponto-hml.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
