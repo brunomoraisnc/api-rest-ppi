@@ -15,7 +15,7 @@ class Location(models.Model):
     #         on_delete=models.CASCADE,
     #         default='1'
     #     )
-    locations = ArrayField(
+    ArrayField(
         JSONField()
     )
     # cpf = models.CharField(max_length=11, null=False, default='0'),
