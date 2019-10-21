@@ -11,6 +11,7 @@ class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.G
 
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
+    search_fields = ('cpf','latitude')
     
     def create(self, request, *args, **kwargs):
         """
