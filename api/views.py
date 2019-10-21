@@ -5,6 +5,7 @@ from rest_framework import viewsets, mixins
 
 from .models import Location
 from .serializers import LocationSerializer
+import pprint
 
 
 class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
@@ -15,6 +16,7 @@ class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.G
     
     def post(self, request, *args, **kwargs):
         urls = request.data
+        pprint(urls)
 
         is_many = isinstance(urls, list)
         if not is_many:
