@@ -24,6 +24,10 @@ class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.G
             serializer.is_valid(raise_exception=True)
             self.create_list(serializer)
             return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+    
+    def create_list(self, serializer):
+        for new_link in serializer.data:
+            NewsUrl.objects.create(**new_link)
 
     # def create(self, request, *args, **kwargs):
     #     """
