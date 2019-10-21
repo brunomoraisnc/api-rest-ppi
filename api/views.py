@@ -16,8 +16,8 @@ class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.G
     
     def post(self, request, *args, **kwargs):
         urls = request.data
-        pprint(urls)
-
+        print(request.data)
+        print('rodou isso aqui')
         is_many = isinstance(urls, list)
         if not is_many:
             return super(LocationViewSet, self).create(request, *args, **kwargs)
@@ -29,7 +29,7 @@ class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.G
     
     def create_list(self, serializer):
         for new_link in serializer.data:
-            NewsUrl.objects.create(**new_link)
+            LocationViewSet.objects.create(**new_link)
 
     # def create(self, request, *args, **kwargs):
     #     """
