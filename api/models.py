@@ -26,6 +26,4 @@ class Location(models.Model):
     accuracy = models.FloatField(null=True),
     speed = models.FloatField(null=True),
     altitude = models.FloatField(null=True),
-    bearing = models.IntegerField(null=True),
-    isFromMockProvider = models.BooleanField(null=True),
-    mockLocationsEnabled = models.BooleanField(null=True)
+    bearing = models.IntegerField(null=True)

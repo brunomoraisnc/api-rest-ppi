@@ -12,7 +12,7 @@ class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.G
 
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
-    search_fields = ('cpf','latitude')
+    # search_fields = ('cpf','latitude')
     
     def post(self, request, *args, **kwargs):
         urls = request.data
