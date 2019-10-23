@@ -11,6 +11,7 @@ import pprint
 class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
 
     queryset = Location.objects.all()
+    print(queryset)
     serializer_class = LocationSerializer
     # search_fields = ('cpf','latitude')
     
