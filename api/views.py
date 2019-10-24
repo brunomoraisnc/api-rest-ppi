@@ -13,7 +13,6 @@ class LocationsViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.
 
     queryset = Location.objects.all()
     print(queryset)
-    print(queryset.data)
     serializer_class = LocationsSerializer(queryset, many=True).data
     for k, v in serializer_class:
         print(k, v)
@@ -25,7 +24,7 @@ class LocationsViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.
         print('rodou isso aqui')
         is_many = isinstance(urls, list)
         if not is_many:
-            return super(LocationViewSet, self).create(request, *args, **kwargs)
+            return super(LocationsViewSet, self).create(request, *args, **kwargs)
         else:
             serializer = self.get_serializer(data=urls, many=True)
             serializer.is_valid(raise_exception=True)
@@ -34,7 +33,7 @@ class LocationsViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.
     
     def create_list(self, serializer):
         for new_link in serializer.data:
-            LocationViewSet.objects.create(**new_link)
+            LocationsViewSet.objects.create(**new_link)
 
     # def create(self, request, *args, **kwargs):
     #     """
