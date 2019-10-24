@@ -7,7 +7,7 @@ class LocationSerializer(serializers.ModelSerializer):
     model = Location
     fields = '__all__'
 
-class LocationSerializer(serializers.Serializer):
+class LocationsSerializer(serializers.Serializer):
     
     class Meta:
         locations = LocationSerializer(many=True)
