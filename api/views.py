@@ -13,6 +13,7 @@ class LocationsViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.
 
     queryset = Location.objects.all()
     print(queryset)
+    print(queryset.data)
     serializer_class = LocationsSerializer(queryset, many=True).data
     for k, v in serializer_class:
         print(k, v)
