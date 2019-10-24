@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import include, path
 
 from rest_framework import routers
-from api.views import LocationViewSet
+from api.views import LocationsViewSet
 
 router = routers.DefaultRouter()
 router.register(
-    'location', LocationViewSet, base_name='location'
+    'location', LocationsViewSet, base_name='location'
 )
 
 urlpatterns = [

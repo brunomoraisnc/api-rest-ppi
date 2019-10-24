@@ -5,14 +5,15 @@ from rest_framework import viewsets, mixins
 
 from .models import Location
 from .serializers import LocationSerializer
+from .serializers import LocationsSerializer
 import pprint
 
 
-class LocationViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+class LocationsViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
 
     queryset = Location.objects.all()
     print(queryset)
-    serializer_class = LocationSerializer
+    serializer_class = LocationsSerializer
     # search_fields = ('cpf','latitude')
     
     def post(self, request, *args, **kwargs):
