@@ -4,7 +4,7 @@ from django.shortcuts import render
 from rest_framework import viewsets, mixins
 
 from .models import Location
-from .serializers import LocationSerializer
+# from .serializers import LocationSerializer
 from .serializers import LocationsSerializer
 import pprint
 
@@ -13,7 +13,8 @@ class LocationsViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.
 
     queryset = Location.objects.all()
     print(queryset)
-    serializer_class = LocationsSerializer
+    serializer_class = LocationsSerializer(queryset, many=True).data
+    pritn(serializer_class)
     # search_fields = ('cpf','latitude')
     
     def post(self, request, *args, **kwargs):
